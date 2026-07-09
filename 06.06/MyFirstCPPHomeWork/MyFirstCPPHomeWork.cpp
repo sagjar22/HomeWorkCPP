@@ -3,22 +3,28 @@
 using namespace std;
 
 // TASK 1: remove a character at a given position
-void removeChar(char chr[], int pos) {
+void removeChar(char chr[], int pos)
+{
     int len = strlen(chr);
-    if (pos < 0 || pos >= len) {
+    if (pos < 0 || pos >= len)
+    {
         cout << "Invalid position!\n";
         return;
     }
-    for (int i = pos; i < len; i++) {
+    for (int i = pos; i < len; i++)
+    {
         chr[i] = chr[i + 1];
     }
 }
 
 // TASK 2: remove all occurrences of a character
-void removeAllOccurrences(char chr[], char target) {
+void removeAllOccurrences(char chr[], char target)
+{
     int j = 0;
-    for (int i = 0; chr[i] != '\0'; i++) {
-        if (chr[i] != target) {
+    for (int i = 0; chr[i] != '\0'; i++)
+    {
+        if (chr[i] != target)
+        {
             chr[j++] = chr[i];
         }
     }
@@ -26,39 +32,49 @@ void removeAllOccurrences(char chr[], char target) {
 }
 
 // TASK 3: insert a character at a given position
-void insertChar(char chr[], int pos, char ch, int bufferSize) {
+void insertChar(char chr[], int pos, char ch, int bufferSize)
+{
     int len = strlen(chr);
-    if (pos < 0 || pos > len || len + 1 >= bufferSize) {
+    if (pos < 0 || pos > len || len + 1 >= bufferSize)
+    {
         cout << "Cannot insert character!\n";
         return;
     }
-    for (int i = len; i >= pos; i--) {
+    for (int i = len; i >= pos; i--)
+    {
         chr[i + 1] = chr[i];
     }
     chr[pos] = ch;
 }
 
 // TASK 4: replace all "." with "!"
-void replaceDots(char chr[]) {
-    for (int i = 0; chr[i] != '\0'; i++) {
-        if (chr[i] == '.') {
+void replaceDots(char chr[])
+{
+    for (int i = 0; chr[i] != '\0'; i++)
+    {
+        if (chr[i] == '.')
+        {
             chr[i] = '!';
         }
     }
 }
 
 // TASK 5: count occurrences of a character
-int countChar(const char chr[], char target) {
+int countChar(const char chr[], char target)
+{
     int count = 0;
-    for (int i = 0; chr[i] != '\0'; i++) {
-        if (chr[i] == target) {
+    for (int i = 0; chr[i] != '\0'; i++)
+    {
+        if (chr[i] == target)
+        {
             count++;
         }
     }
     return count;
 }
 
-int main() {
+int main()
+{
     // --- Task 1 ---
     char chr1[100] = "Hello, World!";
     removeChar(chr1, 5);
